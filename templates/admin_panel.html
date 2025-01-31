@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <script src="/static/js/html5-qrcode.min.js"></script> <!-- Включване на скрипта -->
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <form action="/admin_panel" method="post">
+        <input type="text" name="cameraUrl" placeholder="Camera URL">
+        <button type="submit">Add Camera</button>
+    </form>
+    <h2>Cameras</h2>
+    <ul>
+        {% for idx, camera in cameras %}
+            <li>{{ idx + 1 }}: {{ camera }}</li>
+        {% endfor %}
+    </ul>
+    <div id="reader"></div> <!-- Контейнер за QR код четеца -->
+</body>
+</html>
