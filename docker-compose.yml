@@ -1,11 +1,10 @@
-version: '3.7'
-
 services:
   web:
-    build: .
+    build:
+      context: /srv/sev  # Абсолютен път към директорията
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
+      - /srv/sev:/app
     environment:
       - FASTAPI_ENV=development
